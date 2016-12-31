@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>342</width>
+    <height>209</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>192</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="mainlLayout">
+     <item>
+      <layout class="QHBoxLayout" name="firstFieldLayout">
+       <item>
+        <widget class="QRadioButton" name="firstF_expFormButton">
+         <property name="text">
+          <string>Exp form</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="firstF_firstLine">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="firstF_secondLine"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="firstF_changeFormButton">
+         <property name="text">
+          <string>Change form</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="secondFieldLayout">
+       <item>
+        <widget class="QRadioButton" name="secondF_expFormButton">
+         <property name="text">
+          <string>Exp form</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="secondF_firstLine">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="secondF_secondLine"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="secondF_changeFormButton">
+         <property name="text">
+          <string>Change form</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="downLayout">
+       <item>
+        <layout class="QVBoxLayout" name="operationLayout">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Select operation:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="sumButton">
+           <property name="text">
+            <string>Sum</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="subButton">
+           <property name="text">
+            <string>Subtraction</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="divButton">
+           <property name="text">
+            <string>Division</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="mulButton">
+           <property name="text">
+            <string>Multiplication</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="resultLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Result:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="firstField"/>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="secondField"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="changeFormButton">
+           <property name="text">
+            <string>Change result form</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="calculateButton">
+           <property name="text">
+            <string>Calculate</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
