@@ -3,58 +3,53 @@
 
 const double pi = 3.141592653589793;
 
-complex :: complex (void)
+complex::complex (void)
 {
-    /*if (value1 < 0) value1 *= -1;
-    while (value2 > 2. * pi) value2 -= 2. * pi;
-    while (value2 < 0) value2 += 2. * pi;*/
+    real=0;
+    imag=0;
     arg = 0;
     mod = 0;
 }
 
-complex :: complex (double value1, double value2)
+double complex::get_real_part (void)
 {
-
-    if (value1 < 0) value1 *= -1;
-    while (value2 > 2. * pi) value2 -= 2. * pi;
-    while (value2 < 0) value2 += 2. * pi;
-    arg = value2;
-    mod = value1;
-}
-
-double complex :: get_real_part (void)
-{
-    real = mod * cos(arg);
     return real;
 }
 
-double complex :: get_imag_part (void)
+double complex::get_imag_part (void)
 {
-    imag = mod * sin(arg);
     return imag;
 }
 
-double complex :: get_mod (void)
+double complex::get_mod (void)
 {
     return mod;
 }
 
-double complex :: get_arg (void)
+double complex::get_arg (void)
 {
     return arg;
 }
 
-void complex ::assign(double value1, double value2)
+void complex::assignWithAlg(double re, double im)
 {
-    real = value1;
-    imag = value2;
+    real = re;
+    imag = im;
     mod = sqrt(real*real + imag*imag);
     arg = atan2(imag, real);
 }
 
-complex complex :: operator + (complex b)
+void complex::assignWithExp(double module, double argument)
 {
-    complex c (0,0);
+    mod = module;
+    arg = argument;
+    real = mod*cos(arg);
+    imag = mod*sin(arg);
+}
+
+complex complex::operator + (complex b)
+{
+    complex c;
     c.real = real + b.real;
     c.imag = imag + b.imag;
     c.arg = atan2 (c.imag, c.real);
@@ -62,9 +57,9 @@ complex complex :: operator + (complex b)
     return c;
 }
 
-complex complex :: operator - (complex b)
+complex complex::operator - (complex b)
 {
-    complex c (0,0);
+    complex c;
     c.real = real - b.real;
     c.imag = imag - b.imag;
     c.arg = atan2 (c.imag, c.real);
@@ -72,32 +67,26 @@ complex complex :: operator - (complex b)
     return c;
 }
 
-complex complex :: operator * (complex b)
+complex complex::operator * (complex b)
 {
-    complex c (0,0);
+    complex c;
     c.mod = mod * b.mod;
     c.arg = arg + b.arg;
     while (c.arg > 2. * pi) c.arg -= 2. * pi;
     while (c.arg < 0 ) c.arg += 2. * pi;
     c.real = c.mod * cos (c.arg);
-    c.imag = c.mod *sin (c.arg);
+    c.imag = c.mod * sin (c.arg);
     return c;
 }
 
-complex complex :: operator / (complex b)
+complex complex::operator / (complex b)
 {
-    complex c (0,0);
+    complex c;
     c.mod = mod / b.mod;
     c.arg = arg - b.arg;
     while (c.arg > 2. * pi) c.arg -= 2. * pi;
     while (c.arg < 0 ) c.arg += 2. * pi;
     c.real = c.mod * cos (c.arg);
-    c.imag = c.mod *sin (c.arg);
+    c.imag = c.mod * sin (c.arg);
     return c;
-}
-
-bool complex :: operator == (complex b)
-{
-    if ((real == b.real) && (imag == b.imag)) return true;
-    else return false;
 }

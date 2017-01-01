@@ -25,7 +25,7 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>321</width>
+      <width>327</width>
       <height>192</height>
      </rect>
     </property>
@@ -33,7 +33,7 @@
      <item>
       <layout class="QHBoxLayout" name="firstFieldLayout">
        <item>
-        <widget class="QRadioButton" name="firstF_expFormButton">
+        <widget class="QCheckBox" name="firstF_ExpForm">
          <property name="text">
           <string>Exp form</string>
          </property>
@@ -61,7 +61,7 @@
      <item>
       <layout class="QHBoxLayout" name="secondFieldLayout">
        <item>
-        <widget class="QRadioButton" name="secondF_expFormButton">
+        <widget class="QCheckBox" name="secondF_ExpForm">
          <property name="text">
           <string>Exp form</string>
          </property>
@@ -140,10 +140,10 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="firstField"/>
+          <widget class="QLineEdit" name="resultFirstField"/>
          </item>
          <item>
-          <widget class="QLineEdit" name="secondField"/>
+          <widget class="QLineEdit" name="resultSecondField"/>
          </item>
          <item>
           <widget class="QPushButton" name="changeFormButton">
@@ -169,5 +169,38 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>firstF_changeFormButton</sender>
+   <signal>clicked()</signal>
+   <receiver>firstF_ExpForm</receiver>
+   <slot>toggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>302</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>69</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>secondF_changeFormButton</sender>
+   <signal>clicked()</signal>
+   <receiver>secondF_ExpForm</receiver>
+   <slot>toggle()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>67</x>
+     <y>56</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -32,12 +33,12 @@ public:
     QWidget *verticalLayoutWidget;
     QVBoxLayout *mainlLayout;
     QHBoxLayout *firstFieldLayout;
-    QRadioButton *firstF_expFormButton;
+    QCheckBox *firstF_ExpForm;
     QLineEdit *firstF_firstLine;
     QLineEdit *firstF_secondLine;
     QPushButton *firstF_changeFormButton;
     QHBoxLayout *secondFieldLayout;
-    QRadioButton *secondF_expFormButton;
+    QCheckBox *secondF_ExpForm;
     QLineEdit *secondF_firstLine;
     QLineEdit *secondF_secondLine;
     QPushButton *secondF_changeFormButton;
@@ -50,8 +51,8 @@ public:
     QRadioButton *mulButton;
     QVBoxLayout *resultLayout;
     QLabel *label_3;
-    QLineEdit *firstField;
-    QLineEdit *secondField;
+    QLineEdit *resultFirstField;
+    QLineEdit *resultSecondField;
     QPushButton *changeFormButton;
     QPushButton *calculateButton;
 
@@ -69,7 +70,7 @@ public:
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayoutWidget = new QWidget(centralWidget);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 321, 192));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 327, 192));
         mainlLayout = new QVBoxLayout(verticalLayoutWidget);
         mainlLayout->setSpacing(6);
         mainlLayout->setContentsMargins(11, 11, 11, 11);
@@ -78,10 +79,10 @@ public:
         firstFieldLayout = new QHBoxLayout();
         firstFieldLayout->setSpacing(6);
         firstFieldLayout->setObjectName(QStringLiteral("firstFieldLayout"));
-        firstF_expFormButton = new QRadioButton(verticalLayoutWidget);
-        firstF_expFormButton->setObjectName(QStringLiteral("firstF_expFormButton"));
+        firstF_ExpForm = new QCheckBox(verticalLayoutWidget);
+        firstF_ExpForm->setObjectName(QStringLiteral("firstF_ExpForm"));
 
-        firstFieldLayout->addWidget(firstF_expFormButton);
+        firstFieldLayout->addWidget(firstF_ExpForm);
 
         firstF_firstLine = new QLineEdit(verticalLayoutWidget);
         firstF_firstLine->setObjectName(QStringLiteral("firstF_firstLine"));
@@ -104,10 +105,10 @@ public:
         secondFieldLayout = new QHBoxLayout();
         secondFieldLayout->setSpacing(6);
         secondFieldLayout->setObjectName(QStringLiteral("secondFieldLayout"));
-        secondF_expFormButton = new QRadioButton(verticalLayoutWidget);
-        secondF_expFormButton->setObjectName(QStringLiteral("secondF_expFormButton"));
+        secondF_ExpForm = new QCheckBox(verticalLayoutWidget);
+        secondF_ExpForm->setObjectName(QStringLiteral("secondF_ExpForm"));
 
-        secondFieldLayout->addWidget(secondF_expFormButton);
+        secondFieldLayout->addWidget(secondF_ExpForm);
 
         secondF_firstLine = new QLineEdit(verticalLayoutWidget);
         secondF_firstLine->setObjectName(QStringLiteral("secondF_firstLine"));
@@ -170,15 +171,15 @@ public:
 
         resultLayout->addWidget(label_3);
 
-        firstField = new QLineEdit(verticalLayoutWidget);
-        firstField->setObjectName(QStringLiteral("firstField"));
+        resultFirstField = new QLineEdit(verticalLayoutWidget);
+        resultFirstField->setObjectName(QStringLiteral("resultFirstField"));
 
-        resultLayout->addWidget(firstField);
+        resultLayout->addWidget(resultFirstField);
 
-        secondField = new QLineEdit(verticalLayoutWidget);
-        secondField->setObjectName(QStringLiteral("secondField"));
+        resultSecondField = new QLineEdit(verticalLayoutWidget);
+        resultSecondField->setObjectName(QStringLiteral("resultSecondField"));
 
-        resultLayout->addWidget(secondField);
+        resultLayout->addWidget(resultSecondField);
 
         changeFormButton = new QPushButton(verticalLayoutWidget);
         changeFormButton->setObjectName(QStringLiteral("changeFormButton"));
@@ -199,6 +200,8 @@ public:
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
+        QObject::connect(firstF_changeFormButton, SIGNAL(clicked()), firstF_ExpForm, SLOT(toggle()));
+        QObject::connect(secondF_changeFormButton, SIGNAL(clicked()), secondF_ExpForm, SLOT(toggle()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -206,10 +209,10 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        firstF_expFormButton->setText(QApplication::translate("MainWindow", "Exp form", 0));
+        firstF_ExpForm->setText(QApplication::translate("MainWindow", "Exp form", 0));
         firstF_firstLine->setText(QString());
         firstF_changeFormButton->setText(QApplication::translate("MainWindow", "Change form", 0));
-        secondF_expFormButton->setText(QApplication::translate("MainWindow", "Exp form", 0));
+        secondF_ExpForm->setText(QApplication::translate("MainWindow", "Exp form", 0));
         secondF_firstLine->setText(QString());
         secondF_changeFormButton->setText(QApplication::translate("MainWindow", "Change form", 0));
         label->setText(QApplication::translate("MainWindow", "Select operation:", 0));
