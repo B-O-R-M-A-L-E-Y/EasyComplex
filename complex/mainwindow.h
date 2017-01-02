@@ -5,7 +5,7 @@
 #include <complex.h>
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
 enum operation {NONE=0,SUM,SUB,DIV,MUL};
@@ -25,15 +25,19 @@ private:
     bool secondFieldExpForm = false;
     operation selectedOperation = NONE;
 
-    complex firstField;
-    complex secondField;
+    complex firstComplex;
+    complex secondComplex;
     complex resultField;
 
-public slots:
-    void editFirstComplex();
-    void editSecondComplex();
+private slots:
+    void setFirstComplex();
+    void setSecondComplex();
+
     void changeFirstComplexForm();
     void changeSecondComplexForm();
+
+    void reassignAndPrintFirstComplex();
+    void reassignAndPrintSecondComplex();
 };
 
 #endif // MAINWINDOW_H

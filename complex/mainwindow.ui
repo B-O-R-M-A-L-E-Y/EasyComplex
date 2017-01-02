@@ -169,38 +169,5 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections>
-  <connection>
-   <sender>firstF_changeFormButton</sender>
-   <signal>clicked()</signal>
-   <receiver>firstF_ExpForm</receiver>
-   <slot>toggle()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>302</x>
-     <y>25</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>69</x>
-     <y>22</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>secondF_changeFormButton</sender>
-   <signal>clicked()</signal>
-   <receiver>secondF_ExpForm</receiver>
-   <slot>toggle()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>290</x>
-     <y>53</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>67</x>
-     <y>56</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

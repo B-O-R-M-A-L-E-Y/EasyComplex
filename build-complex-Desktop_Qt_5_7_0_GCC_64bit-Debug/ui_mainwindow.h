@@ -200,8 +200,6 @@ public:
         MainWindow->setCentralWidget(centralWidget);
 
         retranslateUi(MainWindow);
-        QObject::connect(firstF_changeFormButton, SIGNAL(clicked()), firstF_ExpForm, SLOT(toggle()));
-        QObject::connect(secondF_changeFormButton, SIGNAL(clicked()), secondF_ExpForm, SLOT(toggle()));
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi

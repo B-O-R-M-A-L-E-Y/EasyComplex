@@ -36,15 +36,15 @@ void complex::assignWithAlg(double re, double im)
     real = re;
     imag = im;
     mod = sqrt(real*real + imag*imag);
-    arg = atan2(imag, real);
+    arg = atan(imag/real) * (180 / pi);
 }
 
 void complex::assignWithExp(double module, double argument)
 {
     mod = module;
     arg = argument;
-    real = mod*cos(arg);
-    imag = mod*sin(arg);
+    real = mod*cos(arg*pi/180);
+    imag = mod*sin(arg*pi/180);
 }
 
 complex complex::operator + (complex b)
@@ -52,7 +52,7 @@ complex complex::operator + (complex b)
     complex c;
     c.real = real + b.real;
     c.imag = imag + b.imag;
-    c.arg = atan2 (c.imag, c.real);
+    c.arg = atan(c.imag/c.real) * (180 / pi);
     c.mod = sqrt (c.real * c.real + c.imag * c.imag);
     return c;
 }
@@ -62,7 +62,7 @@ complex complex::operator - (complex b)
     complex c;
     c.real = real - b.real;
     c.imag = imag - b.imag;
-    c.arg = atan2 (c.imag, c.real);
+    c.arg = atan(c.imag/c.real) * (180 / pi);
     c.mod = sqrt (c.real * c.real + c.imag * c.imag);
     return c;
 }
@@ -72,10 +72,8 @@ complex complex::operator * (complex b)
     complex c;
     c.mod = mod * b.mod;
     c.arg = arg + b.arg;
-    while (c.arg > 2. * pi) c.arg -= 2. * pi;
-    while (c.arg < 0 ) c.arg += 2. * pi;
-    c.real = c.mod * cos (c.arg);
-    c.imag = c.mod * sin (c.arg);
+    c.real = c.mod * cos (c.arg*pi/180);
+    c.imag = c.mod * sin (c.arg*pi/180);
     return c;
 }
 
@@ -84,9 +82,7 @@ complex complex::operator / (complex b)
     complex c;
     c.mod = mod / b.mod;
     c.arg = arg - b.arg;
-    while (c.arg > 2. * pi) c.arg -= 2. * pi;
-    while (c.arg < 0 ) c.arg += 2. * pi;
-    c.real = c.mod * cos (c.arg);
-    c.imag = c.mod * sin (c.arg);
+    c.real = c.mod * cos (c.arg*pi/180);
+    c.imag = c.mod * sin (c.arg*pi/180);
     return c;
 }
