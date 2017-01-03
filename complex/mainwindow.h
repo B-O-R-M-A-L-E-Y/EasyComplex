@@ -8,7 +8,7 @@ namespace Ui {
     class MainWindow;
 }
 
-enum operation {NONE=0,SUM,SUB,DIV,MUL};
+
 
 class MainWindow : public QMainWindow
 {
@@ -20,16 +20,18 @@ public:
 
 private:
     Ui::MainWindow *ui;
+    enum operation {NONE=0,SUM,SUB,DIV,MUL};
 
     bool firstFieldExpForm = false;
     bool secondFieldExpForm = false;
+    bool resultFieldExpForm = false;
     operation selectedOperation = NONE;
 
     complex firstComplex;
     complex secondComplex;
-    complex resultField;
+    complex resultComplex;
 
-private slots:
+public slots:
     void setFirstComplex();
     void setSecondComplex();
 
@@ -38,6 +40,11 @@ private slots:
 
     void reassignAndPrintFirstComplex();
     void reassignAndPrintSecondComplex();
+
+    void setOperation();
+
+    void calculate();
+    void changeResultComplexForm();
 };
 
 #endif // MAINWINDOW_H

@@ -186,7 +186,6 @@ DIST          = ../../Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
-		../complex/.qmake.stash \
 		../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -349,7 +348,6 @@ Makefile: ../complex/complex.pro ../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.con
 		../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
 		../../Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
@@ -502,7 +500,6 @@ Makefile: ../complex/complex.pro ../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.con
 ../../Qt/5.7/gcc_64/mkspecs/features/qt_config.prf:
 ../../Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Qt/5.7/gcc_64/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/5.7/gcc_64/mkspecs/features/default_pre.prf:
 ../../Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf:
@@ -668,6 +665,7 @@ moc_mainwindow.cpp: ../../Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../complex/complex.h \
 		../complex/mainwindow.h \
 		../../Qt/5.7/gcc_64/bin/moc
 	/home/bormaley/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/bormaley/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/bormaley/Документы/complex -I/home/bormaley/Qt/5.7/gcc_64/include -I/home/bormaley/Qt/5.7/gcc_64/include/QtWidgets -I/home/bormaley/Qt/5.7/gcc_64/include/QtGui -I/home/bormaley/Qt/5.7/gcc_64/include/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../complex/mainwindow.h -o moc_mainwindow.cpp
@@ -792,6 +790,7 @@ main.o: ../complex/main.cpp ../complex/mainwindow.h \
 		../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../complex/complex.h \
 		../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
 		../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
 		../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
@@ -902,57 +901,8 @@ mainwindow.o: ../complex/mainwindow.cpp ../complex/mainwindow.h \
 		../../Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.7/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h \
-		../../Qt/5.7/gcc_64/include/QtCore/QVariant \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QAction \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QApplication \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
-		../../Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
-		../../Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
-		../../Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
-		../../Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
-		../../Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QLabel \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qpen.h \
-		../../Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QPushButton \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qpushbutton.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QRadioButton \
-		../../Qt/5.7/gcc_64/include/QtWidgets/qradiobutton.h \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
-		../../Qt/5.7/gcc_64/include/QtWidgets/QWidget
+		../complex/complex.h \
+		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../complex/mainwindow.cpp
 
 complex.o: ../complex/complex.cpp ../complex/complex.h

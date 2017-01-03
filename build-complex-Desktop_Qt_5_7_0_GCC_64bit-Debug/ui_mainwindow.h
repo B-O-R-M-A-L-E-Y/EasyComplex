@@ -81,6 +81,7 @@ public:
         firstFieldLayout->setObjectName(QStringLiteral("firstFieldLayout"));
         firstF_ExpForm = new QCheckBox(verticalLayoutWidget);
         firstF_ExpForm->setObjectName(QStringLiteral("firstF_ExpForm"));
+        firstF_ExpForm->setEnabled(true);
 
         firstFieldLayout->addWidget(firstF_ExpForm);
 

@@ -34,6 +34,9 @@
       <layout class="QHBoxLayout" name="firstFieldLayout">
        <item>
         <widget class="QCheckBox" name="firstF_ExpForm">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="text">
           <string>Exp form</string>
          </property>
